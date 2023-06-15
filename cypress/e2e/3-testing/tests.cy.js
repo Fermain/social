@@ -11,16 +11,16 @@ describe("Live-Social App: Login user", () => {
 
   it("CAN login the user", () => {
     cy.visit("http://127.0.0.1:5500/#/login");
-    cy.get("input[type=email]").type("anestu30962@stud.noroff.no")
-    cy.get("input[type=password]").type("Vilu4Y0U")
+    cy.get("input[type=email]").type("kadstest@stud.noroff.no")
+    cy.get("input[type=password]").type("erhjkarhkjerh")
     cy.get("form .btn-group button[type=submit]").click()
     cy.wait(1000);
   })
 
   it("CAN logout the user after login", () => {
     cy.visit("http://127.0.0.1:5500/#/login");
-    cy.get("input[type=email]").type("anestu30962@stud.noroff.no")
-    cy.get("input[type=password]").type("Vilu4Y0U")
+    cy.get("input[type=email]").type("kadstest@stud.noroff.no")
+    cy.get("input[type=password]").type("erhjkarhkjerh")
     cy.get("form .btn-group button[type=submit]").click()
     cy.wait(1000);
 
