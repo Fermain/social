@@ -1,11 +1,8 @@
-// const { JSDOM } = require('jsdom');
-// global.DOMParser = (new JSDOM()).window.DOMParser;
-
-
 import { logout } from "./logout";
 import { LocalStorageMock } from "./LocalStorage.mock";
 
 jest.mock('../../router', () => ({     redirect: jest.fn(),   }));
+// Conventionally, adding a test to check if redirect works would be best practice
 
 global.localStorage = new LocalStorageMock
 
