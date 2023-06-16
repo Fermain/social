@@ -8,15 +8,14 @@
     <div class="content mb-3">
         {{body}}
     </div>
-    <div class="btn-group btn-group-sm reactions mb-3">
-        <button class="btn btn-outline-primary react" data-symbol="👍">👍 <span class="badge bg-light text-dark">1</span></button>
-    </div>
+
+    <div class="reactions"></div>
+
     <div class="btn-group w-100 mb-3">
-        <button class="btn btn-primary">Bookmark</button>
         <button class="btn btn-danger" data-action="post-delete" data-id="{{id}}" data-owner="true">Delete Post</button>
         <a href="/post/edit?id={{id}}" class="btn btn-success" data-owner="true">Edit Post</a>
-        <button class="btn btn-info react">React</button>
     </div>
+    
     <div class="comments mb-3">
         <div class="comments-list list-group mb-3"></div>
         <div class="comment-form"></div>

@@ -1,7 +1,7 @@
 import { loadTemplate } from "../../template.js";
 import { commentListener } from "../listeners/commentListener.js";
 
-export async function loadComments(element = new HTMLElement(), postData = {}) {
+export async function loadComments(element = new HTMLElement(), postData = { comments: []}) {
     const { comments, author, id } = postData;
 
     const commentSection = element.querySelector(".comments");
