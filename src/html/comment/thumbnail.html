@@ -1,0 +1,14 @@
+<head>
+    <link rel="stylesheet" href="/dist/css/index.css">
+</head>
+
+<div class="comment thumbnail list-group-item">
+    <div class="d-flex w-100 justify-content-between">
+        <a class="author d-flex align-items-center" href="/profile?name={{author.name}}">
+            <img src="{{author.avatar}}" alt="{{author.name}}" class="img-fluid avatar me-2 rounded-circle ratio ratio-1x1">
+            <h6 class="mb-1">{{author.name}}</h6>
+        </a>
+        <small>{{created}}</small>
+      </div>
+      <small>{{body}}</small>
+</div>

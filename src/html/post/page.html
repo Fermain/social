@@ -17,15 +17,8 @@
         <a href="/post/edit?id={{id}}" class="btn btn-success" data-owner="true">Edit Post</a>
         <button class="btn btn-info react">React</button>
     </div>
-    <div class="comments">
-        <form class="comment">
-            <div class="form-floating mb-3">
-                <textarea name="body" class="form-control" id="body" cols="30" rows="10" placeholder="Comment"></textarea>
-                <label for="body">Comment</label>
-            </div>
-            <div class="btn-group btn-group-sm w-100">
-                <button class="btn btn-outline-success">Send</button>
-            </div>
-        </form>
+    <div class="comments mb-3">
+        <div class="comments-list list-group mb-3"></div>
+        <div class="comment-form"></div>
     </div>
 </div>
