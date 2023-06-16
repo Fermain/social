@@ -8,3 +8,4 @@ export { newTagListener as newTag } from "./newTagListener.js";
 export { postFormListener as postForm } from "./postFormListener.js";
 export { postDeleteListener as postDelete } from "./postDeleteListener.js";
 export { reactListener as react } from "./reactListener.js";
+export { commentListener as comment } from "./commentListener.js";

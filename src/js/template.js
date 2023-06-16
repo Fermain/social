@@ -13,6 +13,7 @@ export async function loadTemplate(name = "notFound", variables = {}, selector =
     }
 
     target.append(html)
+    return html
 }
 
 export function replaceTemplateVariables(template = "", variables = {}) {
