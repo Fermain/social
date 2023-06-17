@@ -1,4 +1,5 @@
 import { reactToPost } from "../../api/post/react.js";
+import { routeByURL } from "../../router.js";
 import { errorDialog } from "../dialog/error.js";
 
 export async function onReact({ target } = new MouseEvent()) {
@@ -8,6 +9,7 @@ export async function onReact({ target } = new MouseEvent()) {
 
     try {
         await reactToPost(post.id, symbol);
+        routeByURL(location.href)
     } catch (error) {
         errorDialog(error);
     }

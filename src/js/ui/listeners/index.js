@@ -9,3 +9,4 @@ export { postFormListener as postForm } from "./postFormListener.js";
 export { postDeleteListener as postDelete } from "./postDeleteListener.js";
 export { reactListener as react } from "./reactListener.js";
 export { commentListener as comment } from "./commentListener.js";
+export { bookmarkListener as bookmark } from "./bookmarkListener.js";
