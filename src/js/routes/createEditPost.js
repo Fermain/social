@@ -4,7 +4,7 @@ import { onNewTag } from "../ui/events/onNewTag.js";
 import { newTag, postForm } from "../ui/listeners/index.js";
 
 export async function createEditPostRoute(id) {
-    const postData = await get(id);
+    const postData = id ? await get(id) : { tags: [] };
 
     await loadTemplate("post/form", postData);
 
