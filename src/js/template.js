@@ -27,3 +27,8 @@ export async function getTemplate(name = "notFound", variables = {}) {
     const html = parse(replaceTemplateVariables(template, { ...variables }));
     return html
 }
+
+export async function getTemplateWithPromise(name = "notFound", promise = new Promise()) {
+    const data = await promise || {};
+    return getTemplate(name, data);
+}

@@ -71,6 +71,9 @@ export async function route(location, params = new URLSearchParams()) {
         case "/post/create":
             await routes.createEditPost(params.get("id"))
             break;
+        case "/bookmarks":
+            await routes.bookmarks();
+            break;
         default:
             await routes.notFound()
     }
