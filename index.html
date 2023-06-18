@@ -8,69 +8,74 @@
   <link rel="stylesheet" href="/dist/css/index.css">
   <!-- Using the non-minified version for development only -->
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/xcatliu/simplemde-theme-dark/master/dist/simplemde-theme-dark.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.rawgit.com/xcatliu/simplemde-theme-dark/master/dist/simplemde-theme-dark.min.css">
   <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
   <script type="module" src="/src/js/index.js"></script>
   <script src="
 https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js
 "></script>
-<link href="
+  <link href="
 https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css
 " rel="stylesheet">
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
 <body data-bs-theme="dark" class="min-vh-100 d-flex flex-column">
   <div class="notifications"></div>
-  <header>
-    <nav class="navbar navbar-expand-md">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Live Social</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a href="/bookmarks" data-auth="true" class="nav-link">Bookmarks</a>
-            </li>
-            <li class="nav-item">
-              <a href="/post/create" data-auth="true" class="nav-link">New Post</a>
-            </li>
-            <li class="nav-item dropdown">
-              <button class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Profile
-              </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" data-auth="true" href="/profile">View</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" data-auth="true" href="/profile/edit">Edit</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" data-auth="false" href="/login">Login</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" data-auth="false" href="/register">Register</a>
-                </li>
-                <li>
-                  <button class="dropdown-item logout" data-auth="true">Logout</button>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex search" role="search" action="/search">
-            <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-        </div>
-      </div>
+  <div class="flex-grow-1 d-flex">
+    <nav class="nav-custom">
+      <ul class="nav nav-pills nav-justified flex-column">
+        <li class="nav-item">
+          <a title="Home" class="nav-link active" aria-current="page" href="/">
+            <span class="material-symbols-outlined">home</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a title="Profile" class="nav-link" data-auth="true" aria-current="page" href="/profile">
+            <span class="material-symbols-outlined">account_circle</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a title="Settings" class="nav-link" data-auth="true" aria-current="page" href="/profile/edit">
+            <span class="material-symbols-outlined">settings</span>
+          </a>
+        </li>
+        <li class="nav-item" data-auth="true">
+          <a title="Favourites" class="nav-link" aria-current="page" href="/bookmarks">
+            <span class="material-symbols-outlined">favorite</span>
+          </a>
+        </li>
+        <li class="nav-item" data-auth="true">
+          <a title="Search" class="nav-link" aria-current="page" href="/search">
+            <span class="material-symbols-outlined">search</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a title="New Post" class="nav-link" aria-current="page" href="/post/create">
+            <span class="material-symbols-outlined">chat</span>
+          </a>
+        </li>
+        <li class="nav-item" data-auth="false">
+          <a title="Login" class="nav-link" aria-current="page" href="/login">
+            <span class="material-symbols-outlined">login</span>
+          </a>
+        </li>
+        <li class="nav-item" data-auth="false">
+          <a title="Register" class="nav-link" aria-current="page" href="/register">
+            <span class="material-symbols-outlined">how_to_reg</span>
+          </a>
+        </li>
+        <li class="nav-item" data-auth="true">
+          <button title="Logout" class="nav-link logout" aria-current="page">
+            <span class="material-symbols-outlined">logout</span>
+          </button>
+        </li>
+      </ul>
     </nav>
-  </header>
-  <main class="container-fluid flex-grow-1"></main>
-  <footer></footer>
+    <main class="container-fluid mt-2"></main>
+  </div>
 
   <dialog id="error" class="alert-danger">
     <form>

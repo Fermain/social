@@ -3,14 +3,13 @@
 </head>
 
 <div class="profile card">
-    <div class="card-body">
-        <h1 class="card-title"><img src="{{avatar}}" alt="avatar" class="rounded-circle ratio ratio-1x1 img-fluid avatar" /> @{{name}}</h1>
+    <div class="ratio" style="--bs-aspect-ratio: 10%;">
+        <img src="{{banner}}" alt="banner" class="img-fluid object-fit-cover" />
+        <div class="d-flex align-items-center px-3 gap-2">
+            <img src="{{avatar}}" alt="avatar" class="rounded-circle ratio ratio-1x1 img-fluid" style="max-width: 3rem;" />
+            <h1 class="mb-0">{{name}}</h1>
+        </div>
     </div>
-    <img src="{{banner}}" alt="banner" class="card-img rounded-0" />
     <div class="list-group list-group-flush posts">
-        <div class="list-group-item"><b>Posts</b></div>
-    </div>
-    <div class="card-footer">
-        
     </div>
 </div>

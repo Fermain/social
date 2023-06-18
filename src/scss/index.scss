@@ -14,7 +14,9 @@ dialog {
 }
 
 img {
-    &:not([src]), &[src=""] {
+
+    &:not([src]),
+    &[src=""] {
         display: none;
     }
 }
@@ -31,4 +33,37 @@ a {
 
 [data-owner]:not(.active) {
     display: none;
+}
+
+.nav {
+    &-custom {
+        max-width: 4rem;
+        border-right: 1px solid;
+
+        & .nav-item {
+            border-bottom: 1px solid;
+        }
+
+        & .nav-link {
+            border-radius: 0;
+            padding: 0.5rem;
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+}
+
+.profile {
+    h1 {
+        mix-blend-mode: difference;
+    }
+}
+
+.results {
+    --auto-grid-min-size: 16rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
+    grid-gap: 0.5rem;
 }

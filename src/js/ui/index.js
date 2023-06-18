@@ -1,10 +1,11 @@
 import * as listeners from "./listeners/index.js";
-import { authVisibility, highlighting, ownerVisibility } from "./utilities/index.js";
+import { activeNav, authVisibility, highlighting, ownerVisibility } from "./utilities/index.js";
 
 export function ui() {
     authVisibility();
     ownerVisibility();
-    highlighting()
+    highlighting();
+    activeNav();
     listeners.navigate();
     listeners.logout();
     listeners.search();

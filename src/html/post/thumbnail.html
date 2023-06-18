@@ -2,8 +2,10 @@
     <link rel="stylesheet" href="/dist/css/index.css">
 </head>
 
-<a class="post card mb-3" href="/post?id={{id}}">
-    <img src="{{media}}" alt="{{title}}" class="card-img-top">
+<a class="post card" href="/post?id={{id}}">
+    <div class="ratio bg-dark-subtle" style="--bs-aspect-ratio: 100%;">
+        <img src="{{media}}" alt="{{title}}" class="img-fluid object-fit-cover">
+    </div>
     <div class="card-body">
         <h2 class="card-title">{{title}}</h2>
     </div>
