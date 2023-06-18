@@ -1,5 +1,6 @@
 import { clearChildren } from "./ui/utilities/clearChildren.js";
 import { parse } from "./ui/utilities/parse.js";
+import * as pipes from "./ui/pipes/index.js";
 
 export async function loadTemplate(name = "notFound", variables = {}, selector = "main", replace = true) {
     const target = document.querySelector(selector);
@@ -15,9 +16,17 @@ export async function loadTemplate(name = "notFound", variables = {}, selector =
     return html
 }
 
-export function replaceTemplateVariables(template = "", variables = {}) {
-    return template.replace(/\{\{([\w.]+)\}\}/g, function (m, key) {
-        return key.split('.').reduce((o, k) => (o || {})[k], variables) || "";
+export function replaceTemplateVariables(template = "", templateVariables = {}) {
+    return template.replace(/\{\{([\w.|\w]+)\}\}/g, (match, key) => {
+        const [variablePath, pipe] = key.split('|');
+        const pathParts = variablePath.split('.');
+        const rawValue = pathParts.reduce((obj, pathPart) => (obj || {})[pathPart], templateVariables);
+
+        if (pipe && typeof pipes[pipe] === 'function') {
+            return pipes[pipe](rawValue);
+        }
+
+        return rawValue || "";
     });
 }
 
