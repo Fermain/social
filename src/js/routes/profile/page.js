@@ -16,7 +16,7 @@ export async function profilePageRoute(name) {
         _posts: true
     });
 
-    posts.forEach(post => {
+    posts.map(post => ({ ...post, author: { ...post.author, ...user }})).forEach(post => {
         loadTemplate("post/list", { ...post }, ".posts", false);
     })
 }
