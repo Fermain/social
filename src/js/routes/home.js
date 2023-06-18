@@ -7,7 +7,7 @@ export async function homeRoute() {
     authGuard("You must be logged into to view your feed.")
     const posts = await listPosts();
     
-    posts.forEach(post => {
+    posts.filter(post => Boolean(post.title)).forEach(post => {
         loadTemplate("post/list", { ...post}, ".posts", false);
     })
 }
