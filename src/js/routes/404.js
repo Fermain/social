@@ -1,3 +1,5 @@
+import { loadTemplate } from "../template.js";
+
 export async function notFoundRoute() {
-    console.log("<404>");
+    await loadTemplate("error/404");
 }
