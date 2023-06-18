@@ -8,7 +8,7 @@
         <h2 class="card-title">{{title}}</h2>
     </div>
     <div class="card-footer d-flex justify-content-between">
-        <div class="author">{{author.name}}</div>
-        <div class="date">{{created}}</div>
+        <div class="author">@{{author.name}}</div>
+        <div class="date">{{created|timeAgo}}</div>
     </div>
 </a>

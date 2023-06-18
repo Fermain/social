@@ -23,12 +23,12 @@ export const API_PROFILE_UNFOLLOW = (name) => (`${API_PROFILE(name)}/unfollow`);
 export const API_PROFILE_POSTS = (name) => (`${API_PROFILE(name)}/${API_PATH_POSTS}`);
 
 export const DEFAULT_SORT_PARAMS = {
-    sort: "created",
+    sort: "updated",
     sortOrder: "desc",
 }
 
 export const DEFAULT_PAGE_PARAMS = {
-    limit: 10,
+    limit: 30,
     offset: 0,
 }
 

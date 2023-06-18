@@ -6,4 +6,5 @@ export * as profile from "./profile/index.js";
 export { searchRoute as search } from "./search.js";
 export { postRoute as post } from "./post.js";
 export { createEditPostRoute as createEditPost } from "./createEditPost.js";
-export { notFoundRoute as notFound } from "./404.js";
+export { bookmarksRoute as bookmarks } from "./bookmarks.js";
+export { notFoundRoute as notFound } from "./error/404.js";

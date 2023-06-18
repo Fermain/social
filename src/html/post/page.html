@@ -4,9 +4,10 @@
 
 <div class="post page" data-author="{{author.name}}" id="{{id}}">
     <h1 class="fw-bold">{{title}}</h1>
-    <h2 class="fw-light">By <a href="/profile?name={{author.name}}">{{author.name}}</a></h2>
+    <em class="text-muted">Posted {{created|timeAgo}}</em>
+    <h2 class="fw-light">By <a href="/profile?name={{author.name}}">@{{author.name}}</a></h2>
     <div class="content mb-3">
-        {{body}}
+        {{body|markdown}}
     </div>
 
     <div class="reactions"></div>

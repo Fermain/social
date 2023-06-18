@@ -1,13 +1,15 @@
 import * as routes from "./routes/index.js";
 import { ui } from "./ui/index.js";
+import { loader } from "./ui/utilities/loader.js";
 
 export async function router() {
     await updateRoute()
     window.addEventListener("hashchange", ({ newURL }) => routeByURL(newURL));
 }
 
-export function authGuard() {
+export function authGuard(message = "You must be logged in to view this page.") {
     if (!localStorage.token) {
+        alert(message);
         redirect("#/login")
     }
 }
@@ -41,6 +43,7 @@ export async function routeByURL(url) {
 }
 
 export async function route(location, params = new URLSearchParams()) {
+    const { removeLoader } = await loader()
     switch (location.toLocaleLowerCase()) {
         case "/":
         case "":
@@ -71,9 +74,12 @@ export async function route(location, params = new URLSearchParams()) {
         case "/post/create":
             await routes.createEditPost(params.get("id"))
             break;
+        case "/bookmarks":
+            await routes.bookmarks();
+            break;
         default:
             await routes.notFound()
     }
-
+    removeLoader();
     ui()
 }
