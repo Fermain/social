@@ -28,7 +28,7 @@ export const DEFAULT_SORT_PARAMS = {
 }
 
 export const DEFAULT_PAGE_PARAMS = {
-    limit: 10,
+    limit: 30,
     offset: 0,
 }
 

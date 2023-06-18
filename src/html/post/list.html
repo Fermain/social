@@ -3,5 +3,14 @@
 </head>
 
 <a class="post list-group-item list-group-item-action" href="/post?id={{id}}">
-    {{title}}
+    
+    <div class="row">
+        <div class="col col-sm-8">
+            <div class="text-muted h6">@{{author.name}}</div>
+            <div>{{title}}</div>
+        </div>
+        <div class="col-auto">
+            <em>{{updated}}</em>
+        </div>
+    </div>
 </a>
