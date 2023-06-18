@@ -10,6 +10,12 @@
   <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
 
   <script type="module" src="/src/js/index.js"></script>
+  <script src="
+https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js
+"></script>
+<link href="
+https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css
+" rel="stylesheet">
 </head>
 
 <body data-bs-theme="dark" class="min-vh-100 d-flex flex-column">
@@ -26,6 +32,9 @@
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
               <a href="/bookmarks" data-auth="true" class="nav-link">Bookmarks</a>
+            </li>
+            <li class="nav-item">
+              <a href="/post/create" data-auth="true" class="nav-link">New Post</a>
             </li>
             <li class="nav-item dropdown">
               <button class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"

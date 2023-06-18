@@ -4,6 +4,8 @@ export { buttonLoader } from "./buttonLoader.js";
 export { parse } from "./parse.js";
 export { clearChildren } from "./clearChildren.js";
 export { ownerVisibility } from "./ownerVisibility.js";
+export { authVisibility } from "./authVisibility.js";
 export { loadComments } from "./loadComments.js";
 export { loadReactions } from "./loadReactions.js";
 export { loader } from "./loader.js";
+export { highlighting } from "./highlighting.js";
