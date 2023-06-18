@@ -6,8 +6,9 @@ export async function router() {
     window.addEventListener("hashchange", ({ newURL }) => routeByURL(newURL));
 }
 
-export function authGuard() {
+export function authGuard(message = "You must be logged in to view this page.") {
     if (!localStorage.token) {
+        alert(message);
         redirect("#/login")
     }
 }
