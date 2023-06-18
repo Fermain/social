@@ -6,7 +6,7 @@ import { newTag, postForm } from "../ui/listeners/index.js";
 export async function createEditPostRoute(id) {
     const postData = id ? await get(id) : { tags: [] };
 
-    await loadTemplate("post/form", postData);
+    const form = await loadTemplate("post/form", postData);
 
     newTag()
     postForm()
@@ -21,5 +21,10 @@ export async function createEditPostRoute(id) {
         } else {
             document.querySelector(".tags .tag input").value = tag.trim();
         }
+    })
+
+    new SimpleMDE({
+        element: form.querySelector("textarea[name=body]"),
+        forceSync: true
     })
 }
