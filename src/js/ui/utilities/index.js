@@ -6,3 +6,4 @@ export { clearChildren } from "./clearChildren.js";
 export { ownerVisibility } from "./ownerVisibility.js";
 export { loadComments } from "./loadComments.js";
 export { loadReactions } from "./loadReactions.js";
+export { loader } from "./loader.js";

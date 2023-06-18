@@ -1,5 +1,6 @@
 import * as routes from "./routes/index.js";
 import { ui } from "./ui/index.js";
+import { loader } from "./ui/utilities/loader.js";
 
 export async function router() {
     await updateRoute()
@@ -42,6 +43,7 @@ export async function routeByURL(url) {
 }
 
 export async function route(location, params = new URLSearchParams()) {
+    const { removeLoader } = await loader()
     switch (location.toLocaleLowerCase()) {
         case "/":
         case "":
@@ -78,6 +80,6 @@ export async function route(location, params = new URLSearchParams()) {
         default:
             await routes.notFound()
     }
-
+    removeLoader();
     ui()
 }
