@@ -1,16 +1,24 @@
 <head>
-    <link rel="stylesheet" href="/dist/css/index.css">
+  <link rel="stylesheet" href="/dist/css/index.css" />
 </head>
 
 <a class="post list-group-item list-group-item-action" href="/post?id={{id}}">
-    
-    <div class="row">
-        <div class="col col-sm-8">
-            <div class="text-muted h6">@{{author.name}}</div>
-            <div>{{title}}</div>
-        </div>
-        <div class="col-auto">
-            <em>{{updated|timeAgo}}</em>
-        </div>
+  <div class="row">
+    <div class="col col-sm-8">
+      <div class="text-muted h6">
+        <img
+          src="{{author.avatar}}"
+          alt=""
+          style="width: 40px; height: 40px; object-fit: cover"
+        />
+        @{{author.name}}
+      </div>
+
+      <div class="h5">{{title}}</div>
+      <div>{{body}}</div>
     </div>
+    <div class="col-auto">
+      <em>{{updated|timeAgo}}</em>
+    </div>
+  </div>
 </a>
