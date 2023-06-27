@@ -4,13 +4,14 @@ import { authGuard } from "../../router.js";
 import { loadTemplate } from "../../template.js";
 import { profileForm } from "../../ui/listeners/index.js";
 
-
 export async function profileEditRoute(name) {
-    authGuard()
+  authGuard();
 
-    const user = name ? await getProfile(name) : me();
+  const user = name ? await getProfile(name) : me();
 
-    await loadTemplate("profile/form", user)
+  document.title = "Edit profile | Live Social";
 
-    profileForm()
+  await loadTemplate("profile/form", user);
+
+  profileForm();
 }
