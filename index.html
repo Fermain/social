@@ -1,94 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Test Page</title>
-  <link rel="stylesheet" href="/dist/css/index.css">
-  <!-- Using the non-minified version for development only -->
-  <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js" defer></script>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/xcatliu/simplemde-theme-dark/master/dist/simplemde-theme-dark.min.css">
-  <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
-  <script type="module" src="/src/js/index.js"></script>
-  <script src="
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Social</title>
+    <link rel="stylesheet" href="/dist/css/index.css" />
+    <!-- Using the non-minified version for development only -->
+    <script
+      src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"
+      defer
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.rawgit.com/xcatliu/simplemde-theme-dark/master/dist/simplemde-theme-dark.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script type="module" src="/src/js/index.js"></script>
+    <script src="
 https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js
 "></script>
-<link href="
+    <link
+      href="
 https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css
-" rel="stylesheet">
-</head>
+"
+      rel="stylesheet"
+    />
+  </head>
 
-<body data-bs-theme="dark" class="min-vh-100 d-flex flex-column">
-  <div class="notifications"></div>
-  <header>
-    <nav class="navbar navbar-expand-md">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">Live Social</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-md-0">
-            <li class="nav-item">
-              <a href="/bookmarks" data-auth="true" class="nav-link">Bookmarks</a>
-            </li>
-            <li class="nav-item">
-              <a href="/post/create" data-auth="true" class="nav-link">New Post</a>
-            </li>
-            <li class="nav-item dropdown">
-              <button class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Profile
+  <body data-bs-theme="dark" class="min-vh-100 d-flex flex-column">
+    <div class="notifications"></div>
+    <header>
+      <nav class="navbar navbar-expand-md">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">Live Social</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a href="/bookmarks" data-auth="true" class="nav-link"
+                  >Bookmarks</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/post/create" data-auth="true" class="nav-link"
+                  >New Post</a
+                >
+              </li>
+              <li class="nav-item dropdown">
+                <button
+                  class="nav-link dropdown-toggle"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Profile
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" data-auth="true" href="/profile"
+                      >View</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      data-auth="true"
+                      href="/profile/edit"
+                      >Edit</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" data-auth="false" href="/login"
+                      >Login</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" data-auth="false" href="/register"
+                      >Register</a
+                    >
+                  </li>
+                  <li>
+                    <button class="dropdown-item logout" data-auth="true">
+                      Logout
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <form class="d-flex search" role="search" action="/search">
+              <input
+                class="form-control me-2"
+                name="query"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
               </button>
-              <ul class="dropdown-menu">
-                <li>
-                  <a class="dropdown-item" data-auth="true" href="/profile">View</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" data-auth="true" href="/profile/edit">Edit</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" data-auth="false" href="/login">Login</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" data-auth="false" href="/register">Register</a>
-                </li>
-                <li>
-                  <button class="dropdown-item logout" data-auth="true">Logout</button>
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <form class="d-flex search" role="search" action="/search">
-            <input class="form-control me-2" name="query" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+            </form>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
-  <main class="container-fluid flex-grow-1"></main>
-  <footer></footer>
+      </nav>
+    </header>
+    <main class="container-fluid flex-grow-1"></main>
+    <footer></footer>
 
-  <dialog id="error" class="alert-danger">
-    <form>
-      <div class="message mb-3"></div>
-      <div class="btn-group w-100">
-        <button formmethod="dialog" value="cancel" class="btn btn-sm btn-warning close">Close</button>
-      </div>
-    </form>
-  </dialog>
+    <dialog id="error" class="alert-danger">
+      <form>
+        <div class="message mb-3"></div>
+        <div class="btn-group w-100">
+          <button
+            formmethod="dialog"
+            value="cancel"
+            class="btn btn-sm btn-warning close"
+          >
+            Close
+          </button>
+        </div>
+      </form>
+    </dialog>
 
-  <dialog id="success" class="alert-success">
-    <form>
-      <div class="message mb-3"></div>
-      <div class="btn-group w-100">
-        <button formmethod="dialog" value="cancel" class="btn btn-sm btn-warning close">Close</button>
-      </div>
-    </form>
-  </dialog>
-</body>
-
+    <dialog id="success" class="alert-success">
+      <form>
+        <div class="message mb-3"></div>
+        <div class="btn-group w-100">
+          <button
+            formmethod="dialog"
+            value="cancel"
+            class="btn btn-sm btn-warning close"
+          >
+            Close
+          </button>
+        </div>
+      </form>
+    </dialog>
+  </body>
 </html>

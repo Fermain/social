@@ -5,13 +5,15 @@ import { postDelete } from "../ui/listeners/index.js";
 import { loadComments, loadReactions } from "../ui/utilities/index.js";
 
 export async function postRoute(id) {
-    authGuard();
+  authGuard();
 
-    const postData = await get(id);
+  const postData = await get(id);
 
-    const post = await loadTemplate("post/page", postData);
+  const post = await loadTemplate("post/page", postData);
 
-    postDelete();
-    await loadReactions(postData.reactions, postData);
-    await loadComments(post, postData);
+  postDelete();
+  await loadReactions(postData.reactions, postData);
+  await loadComments(post, postData);
+
+  document.title = postData.title + " | Live Social";
 }
