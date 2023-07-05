@@ -1,16 +1,27 @@
 <head>
-    <link rel="stylesheet" href="/dist/css/index.css">
+  <link rel="stylesheet" href="/dist/css/index.css" />
 </head>
 
-<div class="profile card">
-    <div class="card-body">
-        <h1 class="card-title"><img src="{{avatar}}" alt="avatar" class="rounded-circle ratio ratio-1x1 img-fluid avatar" /> @{{name}}</h1>
-    </div>
-    <img src="{{banner}}" alt="banner" class="card-img rounded-0" />
-    <div class="list-group list-group-flush posts">
-        <div class="list-group-item"><b>Posts</b></div>
-    </div>
-    <div class="card-footer">
-        
-    </div>
+<div class="profile card" data-profile="{{name}}">
+  <div class="card-body">
+    <h1 class="card-title">
+      <img
+        src="{{avatar}}"
+        alt="avatar"
+        class="rounded-circle ratio ratio-1x1 img-fluid avatar"
+      />
+      @{{name}}
+    </h1>
+    <a href="/post/create" class="btn btn-success" data-profile-owner="true"
+      >New Post</a
+    >
+    <a href="/profile/edit" class="btn btn-light" data-profile-owner="true"
+      >Edit Profile</a
+    >
+  </div>
+  <img src="{{banner}}" alt="banner" class="card-img rounded-0" />
+  <div class="list-group list-group-flush posts">
+    <div class="list-group-item"><b>Posts</b></div>
+  </div>
+  <div class="card-footer"></div>
 </div>
